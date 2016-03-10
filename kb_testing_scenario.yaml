@@ -1,0 +1,42 @@
+# @author: cappetta
+# @purpose: kbtesting of vuln_82515
+#---
+#Static_KB:
+#  - 0000000000 3 Host/local_checks_enabled=1
+#  - 0000000000 1 Host/Cisco/NX-OS/Device=Nexus
+---
+#Dynamic_KB:
+#Tests:
+#  -
+#    Test1: "0000000000 1 Host/Cisco/NX-OS/Version=3550"
+#  -
+#    Test2: "0000000000 1 Host/Cisco/NX-OS/Version=3550"
+#  -
+#    Test3: "0000000000 1 Host/Cisco/NX-OS/Version=3550"
+#      - 0000000000 1 Host/Cisco/NX-OS/Version=4500"
+#      - 0000000000 1 Host/Cisco/NX-OS/Version=3765"
+#      - 0000000000 1 Host/Cisco/NX-OS/Version="
+#      - 0000000000 1 Host/Cisco/NX-OS/Version="
+#
+#
+#Vulnerable:
+TestSet1:
+  - Vulnerable: true
+    Type: Vulnerable
+    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3550
+  - Vulnerable: true
+    Type: Vulnerable
+    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3551
+  - Vulnerable: true
+    Type: Vulnerable
+    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3552
+  - Vulnerable: false
+    Type: Not-Vulnerable
+    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3553
+  - Vulnerable: false
+    Type: Not-Vulnerable
+    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3554
+  - Vulnerable: false
+    Type: Not-Vulnerable
+    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3555
+
