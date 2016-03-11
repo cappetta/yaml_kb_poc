@@ -1,42 +1,41 @@
 # @author: cappetta
-# @purpose: kbtesting of vuln_82515
-#---
-#Static_KB:
-#  - 0000000000 3 Host/local_checks_enabled=1
-#  - 0000000000 1 Host/Cisco/NX-OS/Device=Nexus
+# @purpose: YAML Driven test scenarious
+
+Core_KB: &core
+   name: |
+    0000000000 3 Host/local_checks_enabled=1
+    0000000000 1 Host/Cisco/NX-OS/Device=Nexus
+#    kb8: 0000000000 1 Host/Cisco/NX-OS/Version=6.0(2)A6(1)
+#    -
+nasl: cisco-sa-20160302-netstack-nxos.nasl
 ---
-#Dynamic_KB:
-#Tests:
-#  -
-#    Test1: "0000000000 1 Host/Cisco/NX-OS/Version=3550"
-#  -
-#    Test2: "0000000000 1 Host/Cisco/NX-OS/Version=3550"
-#  -
-#    Test3: "0000000000 1 Host/Cisco/NX-OS/Version=3550"
-#      - 0000000000 1 Host/Cisco/NX-OS/Version=4500"
-#      - 0000000000 1 Host/Cisco/NX-OS/Version=3765"
-#      - 0000000000 1 Host/Cisco/NX-OS/Version="
-#      - 0000000000 1 Host/Cisco/NX-OS/Version="
-#
-#
-#Vulnerable:
 TestSet1:
   - Vulnerable: true
     Type: Vulnerable
-    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3550
+    version: 0000000000 1 Host/Cisco/NX-OS/Version=3550
+    model: 0000000000 1 Host/Cisco/NX-OS/Model=3550P
   - Vulnerable: true
     Type: Vulnerable
-    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3551
+    version: 0000000000 1 Host/Cisco/NX-OS/Version=3551
+    model: 0000000000 1 Host/Cisco/NX-OS/Model=3551P
   - Vulnerable: true
     Type: Vulnerable
-    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3552
+    version: 0000000000 1 Host/Cisco/NX-OS/Version=3552
+    model: 0000000000 1 Host/Cisco/NX-OS/Model=3552P
   - Vulnerable: false
     Type: Not-Vulnerable
-    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3553
+    version: 0000000000 1 Host/Cisco/NX-OS/Version=3553
+    model: 0000000000 1 Host/Cisco/NX-OS/Model=3553P
   - Vulnerable: false
     Type: Not-Vulnerable
-    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3554
+    version: 0000000000 1 Host/Cisco/NX-OS/Version=3554
+    model: 0000000000 1 Host/Cisco/NX-OS/Model=3554P
   - Vulnerable: false
     Type: Not-Vulnerable
-    kb: 0000000000 1 Host/Cisco/NX-OS/Version=3555
-
+    version: 0000000000 1 Host/Cisco/NX-OS/Version=3555
+    model: 0000000000 1 Host/Cisco/NX-OS/Model=3555P
+---
+Anything_else:
+  this: that
+  that: this
+  when: who

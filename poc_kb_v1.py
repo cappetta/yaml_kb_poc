@@ -4,33 +4,27 @@ import yaml
 yaml_file = open('kb_testing_scenario.yaml')
 yaml_data = yaml.load_all(yaml_file)
 
+file = open('/tmp/kb_test_file','w')
+debug=False
+
+
 for value in yaml_data:
-# works for single YAML
-        # print "Individual Static KBs"
-        # for static_kb in value['Static_KB']:
-        #         print static_kb
-        # for dyn_kb in value['Dynamic_KB']['version']:
-        #        print dyn_kb
+    print "Complete YAML: %s" % value
+    print value.viewkeys()
+    if value.has_key("Core_KB"):
+        file.write(value["Core_KB"]["name"])
+        for kb in value.values():
+            print "Core KB -> %s" % kb
 
-# Broken
-#         for k,v in value.items():
-#                 print k, "->", v
-#                 for val in v:
-#                         # print "val => ", val
-#                         for att in val:
-#                                 print "att => ", att
-#                                 for asset in att:
-#                                         print "asset => ", asset
-
-    print "YAML: %s" % value
-    for tests in value.values():
-        # print "YAML Test: %s" % tests
-        for test in tests:
-            if test['Vulnerable']:
-                print "Test Vulnerability: %s "  % (test["kb"])
-            if not test['Vulnerable']:
-                print "Test not Vulnerable: %s "  % (test["kb"])
-
-
-print "\n"
+    if value.has_key("TestSet1"):
+        for tests in value.values():
+            for test in tests:
+                if test['Vulnerable']:
+                    if debug:    print "Test Vulnerable Model: %s " % (test["model"])
+                    file.write("\n"+test["model"])
+                if not test['Vulnerable']:
+                    if debug: print "Test not Vulnerable Version: %s " % (test["version"])
+    print "========================="
+file.close()
+# print "\n"
 
