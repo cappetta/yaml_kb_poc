@@ -1,0 +1,78 @@
+# @author: cappetta
+# @purpose: YAML Driven test scenarious
+
+RAW_KB_HEADER:
+   name: |
+    0000000000 1 Host/local_checks_enabled=1
+    1457970809 1 Host/MacOSX/Version=Mac OS X 10.9.5
+    1457970809 3 installed_sw/Adobe Reader=1
+    1457970809 3 installed_sw/Adobe Reader/L0FwcGxpY2F0aW9ucy9BZG9iZSBSZWFkZXIuYXBw/priority=0
+    1457970809 3 MacOSX/Adobe_Reader/Installed=1
+   ticket: 82584
+
+#    kb8: 0000000000 1 Host/Cisco/NX-OS/Version=6.0(2)A6(1)
+kb_prefix_version: 1457970809 1 MacOSX/Adobe_Reader/Adobe Reader.app/Version=
+kb_prefix_version2: 1457970809 1 installed_sw/Adobe Reader/L0FwcGxpY2F0aW9ucy9BZG9iZSBSZWFkZXIuYXBw/version=
+#nasl: cisco-sa-20160302-netstack-nxos.nasl
+---
+TestSet1:
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 8.1.0
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 9.5.0
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 9.4.0
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 9.4.4
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 9.4.9
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 9.2.0
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 9.5.4
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 10.0
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 10.1.3
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 10.1.6
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: false
+    version: 10.1.8
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 11.0.2
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 11.0.35
+
+  - Description: Check Adobe Reader < 10.1.1 / 9.4.6 / 8.3.1 Multiple Vulnerabilities (APSB11-21, APSB11-24) (Mac OS X)
+    Vulnerable: true
+    version: 11.0.4
+---
+Anything_else:
+  this: that
+  that: this
+  when: who

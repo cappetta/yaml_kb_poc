@@ -1,39 +1,76 @@
 # @author: cappetta
 # @purpose: YAML Driven test scenarious
 
-Core_KB: &core
+RAW_KB_HEADER:
    name: |
-    0000000000 3 Host/local_checks_enabled=1
+    0000000000 1 Host/local_checks_enabled=1
     0000000000 1 Host/Cisco/NX-OS/Device=Nexus
 #    kb8: 0000000000 1 Host/Cisco/NX-OS/Version=6.0(2)A6(1)
-#    -
+kb_prefix_version: 0000000000 1 Host/Cisco/NX-OS/Version=
+kb_prefix_model: 0000000000 1 Host/Cisco/NX-OS/Model=
 nasl: cisco-sa-20160302-netstack-nxos.nasl
 ---
 TestSet1:
-  - Vulnerable: true
-    Type: Vulnerable
-    version: 0000000000 1 Host/Cisco/NX-OS/Version=3550
-    model: 0000000000 1 Host/Cisco/NX-OS/Model=3550P
-  - Vulnerable: true
-    Type: Vulnerable
-    version: 0000000000 1 Host/Cisco/NX-OS/Version=3551
-    model: 0000000000 1 Host/Cisco/NX-OS/Model=3551P
-  - Vulnerable: true
-    Type: Vulnerable
-    version: 0000000000 1 Host/Cisco/NX-OS/Version=3552
-    model: 0000000000 1 Host/Cisco/NX-OS/Model=3552P
-  - Vulnerable: false
-    Type: Not-Vulnerable
-    version: 0000000000 1 Host/Cisco/NX-OS/Version=3553
-    model: 0000000000 1 Host/Cisco/NX-OS/Model=3553P
-  - Vulnerable: false
-    Type: Not-Vulnerable
-    version: 0000000000 1 Host/Cisco/NX-OS/Version=3554
-    model: 0000000000 1 Host/Cisco/NX-OS/Model=3554P
-  - Vulnerable: false
-    Type: Not-Vulnerable
-    version: 0000000000 1 Host/Cisco/NX-OS/Version=3555
-    model: 0000000000 1 Host/Cisco/NX-OS/Model=3555P
+  - Description: Check 7xxx series devices w/ 7.x versions
+    Vulnerable: false
+    version: 7.2(9)N2(6)
+    model: 7009
+
+  - Description: Check 7xxx series devices w/ 5.x versions
+    Vulnerable: false
+    version: 5.2(9)N2(6)
+    model: 7009
+
+  - Description: Check 5xxx series devices w/ 7.x versions
+    Vulnerable: true
+    version: 7.1(1)N2(6)
+    model: 5596UP
+
+  - Description: Check 5xxx series devices w/ 7.x versions
+    Vulnerable: false
+    version: 7.1(1)N1(1)
+    model: 3553P
+
+  - Description: Check 1xxx series devices w/ 6.x versions
+    Vulnerable: false
+    version: 6.2(1)SV3(1.1)
+    model: 1000v
+
+  - Description: Check 7xxx series devices w/ 5.x versions
+    Vulnerable: true
+    version: 5.1(1)N2(6)
+    model: 7718
+
+  - Description: Check 6xxx series devices w/ 5.x versions
+    Vulnerable: true
+    version: 5.1(1)N2(6)
+    model: 6004EF
+
+  - Description: Check 5xxx series devices w/ 5.x versions
+    Vulnerable: true
+    version: 5.1(1)N2(6)
+    model: 5672UP-16G
+
+  - Description: Check 5xxx series devices w/ 7.x versions
+    Vulnerable: true
+    version: 7.0(0)N1(0)
+    model: 5596UP
+
+  - Description: Check 3xxx series devices w/ 4.x versions
+    Vulnerable: true
+    version: 4.0(2)U2(3)
+    model: 3132Q-X
+
+  - Description: Check 3xxx series devices w/ 4.x versions
+    Vulnerable: true
+    version: 4.0(2)U2(3)
+    model: 31128PQ
+
+  - Description: Check 3xxx series devices w/ 3.x versions
+    Vulnerable: true
+    version: 3.0(2)U2(3)
+    model: 31108PC-V
+
 ---
 Anything_else:
   this: that
